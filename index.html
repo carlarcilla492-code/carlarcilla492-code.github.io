@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>L.A.R Repair Services</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,8 +25,31 @@
             background: white;
             margin: 10px auto;
             padding: 15px;
-            max-width: 400px;
+            max-width: 500px;
             border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            background: #e8faff;
+        }
+
+        .service-content {
+            display: none;
+            background: white;
+            margin: 10px auto 20px;
+            padding: 15px;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .service-content img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -44,6 +68,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -54,22 +79,111 @@
 <section>
     <h2>Our Services</h2>
 
-    <div class="service">📱 Phone Repair</div>
-    <div class="service">💻 Laptop Repair</div>
-    <div class="service">🔧 Hardware Diagnostics</div>
-    <div class="service">⚙️ Software Installation</div>
-    <div class="service">🖥️ Computer Maintenance</div>
+    <!-- Phone Repair -->
+    <div class="service" onclick="toggleService('phone')">
+        📱 Phone Repair
+    </div>
+
+    <div id="phone" class="service-content">
+        <img src="phone-repair.jpg" alt="Phone Repair">
+        <h3>Phone Repair</h3>
+        <p>
+            Screen replacement, battery replacement,
+            charging port repair, speaker issues,
+            and software troubleshooting.
+        </p>
+    </div>
+
+    <!-- Laptop Repair -->
+    <div class="service" onclick="toggleService('laptop')">
+        💻 Laptop Repair
+    </div>
+
+    <div id="laptop" class="service-content">
+        <img src="laptop-repair.jpg" alt="Laptop Repair">
+        <h3>Laptop Repair</h3>
+        <p>
+            Keyboard replacement, SSD upgrades,
+            RAM upgrades, overheating fixes,
+            and motherboard diagnostics.
+        </p>
+    </div>
+
+    <!-- Hardware Diagnostics -->
+    <div class="service" onclick="toggleService('diagnostics')">
+        🔧 Hardware Diagnostics
+    </div>
+
+    <div id="diagnostics" class="service-content">
+        <img src="diagnostics.jpg" alt="Diagnostics">
+        <h3>Hardware Diagnostics</h3>
+        <p>
+            Comprehensive testing to identify
+            faulty components and hardware issues.
+        </p>
+    </div>
+
+    <!-- Software Installation -->
+    <div class="service" onclick="toggleService('software')">
+        ⚙️ Software Installation
+    </div>
+
+    <div id="software" class="service-content">
+        <img src="software-installation.jpg" alt="Software Installation">
+        <h3>Software Installation</h3>
+        <p>
+            Windows installation, driver setup,
+            antivirus installation, and software configuration.
+        </p>
+    </div>
+
+    <!-- Computer Maintenance -->
+    <div class="service" onclick="toggleService('maintenance')">
+        🖥️ Computer Maintenance
+    </div>
+
+    <div id="maintenance" class="service-content">
+        <img src="computer-maintenance.jpg" alt="Computer Maintenance">
+        <h3>Computer Maintenance</h3>
+        <p>
+            Cleaning, optimization, virus removal,
+            and preventive maintenance services.
+        </p>
+    </div>
+
 </section>
 
 <section>
     <h2>Contact Us</h2>
-    <p>📞 Phone: <a href="tel:09478233616">09478233616</a></p>
-    <p>📘 Facebook: <a href="https://www.facebook.com/profile.php?id=61590546417309" target="_blank">Visit our Facebook Page</a></p>
+
+    <p>
+        📞 Phone:
+        <a href="tel:09478233616">09478233616</a>
+    </p>
+
+    <p>
+        📘 Facebook:
+        <a href="https://www.facebook.com/profile.php?id=61590546417309" target="_blank">
+            Visit our Facebook Page
+        </a>
+    </p>
 </section>
 
 <footer>
     © 2026 L.A.R Repair Services
 </footer>
+
+<script>
+function toggleService(id) {
+    const content = document.getElementById(id);
+
+    if (content.style.display === "block") {
+        content.style.display = "none";
+    } else {
+        content.style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
